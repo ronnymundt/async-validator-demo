@@ -1,1 +1,5 @@
-<p>home works!</p>
+<form [formGroup]="homeForm">
+  <input type="text" formControlName="name">
+</form>
+
+homeForm.valid: {{ homeForm.valid }}
