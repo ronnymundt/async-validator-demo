@@ -11,7 +11,9 @@ export function demoValidatorAsync(): AsyncValidatorFn {
     // simulate a async api request
     return of(control.value).pipe(
       delay(1000), // simulate a server request delay
-      map((value) => (validNames.includes(value) ? null : { invalid: true })),
+      map((value: string) =>
+        validNames.includes(value) ? null : { invalid: true },
+      ),
     );
   };
 }

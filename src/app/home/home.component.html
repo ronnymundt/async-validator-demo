@@ -1,5 +1,18 @@
 <form [formGroup]="homeForm">
-  <input type="text" formControlName="name">
+  <input
+      type="text"
+      formControlName="name"
+      class ="form-control border"
+      [ngClass]="{'border-danger': homeForm.invalid, 'border-success': homeForm.valid}"
+      placeholder="admin, user or demo">
 </form>
 
-homeForm.valid: {{ homeForm.valid }}
+<div
+    class="alert"
+    [ngClass]="{'alert-success': homeForm.valid, 'alert-danger': homeForm.invalid}"
+    role="alert">
+  <span>
+    <strong>Form status:</strong>
+    {{ homeForm.status }}
+  </span>
+</div>
